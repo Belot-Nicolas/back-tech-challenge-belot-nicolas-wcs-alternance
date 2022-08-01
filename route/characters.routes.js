@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const Characters = require("../models/characters.model.js");
+const connection = require("../db-config");
 
 router.get("/", (req, res) => {
   Characters.findMany()

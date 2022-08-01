@@ -7,10 +7,7 @@ const findMany = () => {
 
 const create = ({ name }) => {
   return db
-    .query(
-      "INSERT INTO characters ( name ) VALUES (?)",
-      [name]
-    )
+    .query("INSERT INTO characters (name) VALUES (?)", [name])
     .then(([result]) => {
       const id = result.insertId;
       return { id, name };
@@ -18,6 +15,6 @@ const create = ({ name }) => {
 };
 
 module.exports = {
-    findMany,
-    create
-}
+  findMany,
+  create,
+};
